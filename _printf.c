@@ -13,6 +13,29 @@ int _strlen(const char *s)
 	return (i);
 }
 /**
+ * toString - a function that turns numerics to string
+ * @n: the passed number
+ * Return: the string
+ */
+char *toString(int n)
+{
+	int i;
+	int dup = n;
+	int digits = getDigits(n);
+	char s[1000];
+
+	for (i = 0; i < digits; i++)
+	{
+		s[digits - (i + 1)] = 48 + (n % 10);
+		n /= 10;
+	}
+	s[digits] = '\0';
+	char *sptr = malloc(sizeof(char) * digits);
+	for (i = 0; i < digits; i++)
+		sptr[i] = s[i];
+	return (sptr);
+}
+/**
  * counter - a function to count the number of %
  * @format: character string
  * Return: the count
@@ -36,7 +59,7 @@ int counter(const char *format)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, n;
+	int i, n, temp;
 	char c, *cptr;
 
 	if (format == NULL)
@@ -58,6 +81,12 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					cptr = va_arg(args, char *);
+					write(1, cptr, _strlen(cptr));
+					break;
+				case 'i':
+				case 'd':
+					temp = va_arg(args, int);
+					cptr = toString(temp);
 					write(1, cptr, _strlen(cptr));
 					break;
 				default:
