@@ -40,6 +40,7 @@ int int_form(va_list f)
 	cptr = toString(n);
 	for (i = 0; i < _strlen(cptr); i++)
 		len += _putchar(cptr[i]);
+	free(cptr);
 	return (len);
 }
 

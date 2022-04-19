@@ -62,6 +62,13 @@ char *toString(int n)
                 n *= -1;
                 neg = 1;
         }
+	else if (n == 0)
+	{
+		sptr = malloc(sizeof(char) * 2);
+		sptr[0] = '0';
+		sptr[1] = '\0';
+		return (sptr);
+	}
 
         for (i = 0; i < digits; i++)
         {
