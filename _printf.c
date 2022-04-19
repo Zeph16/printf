@@ -119,7 +119,9 @@ int _printf(const char *format, ...)
                                         temp = va_arg(args, int);
                                         cptr = toString(temp);
                                         write(1, cptr, _strlen(cptr));
-                                        break;
+                                        free(cptr);
+					len += _strlen(cptr);
+					break;
 				case '%':
 					c = '%';
 					cptr = &c;
