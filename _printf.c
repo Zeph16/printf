@@ -70,7 +70,6 @@ int _printf(const char *format, ...)
 		}
 		write(1, (char *)(format + i), 1);
 	}
-	write(1, "\n", 1);
 	va_end(args);
 	return (n);
 }
