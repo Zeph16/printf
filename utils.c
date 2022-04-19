@@ -36,11 +36,13 @@ int getDigits(int n)
 {
 	int dup = n;
 	int digits = 0;
-
+	
+	if (n == 0)
+		return (1);
 	while (dup != 0)
 	{
 		dup /= 10;
-	digits++;
+		digits++;
 	}
 	return (digits);
 }

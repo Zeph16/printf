@@ -29,7 +29,7 @@ int handler(const char *givenstr, va_list args, Spec forms[])
 				i++;
 				continue;
 			}
-			for (j = 0; j < 4; j++)
+			for (j = 0; j < 5; j++)
 			{
 				if (givenstr[i + 1] == forms[j].form)
 				{
@@ -38,7 +38,7 @@ int handler(const char *givenstr, va_list args, Spec forms[])
 					break;
 				}
 			}
-			if (j == 4)
+			if (j == 5)
 				len += _putchar('%');
 			continue;
 		}
@@ -59,7 +59,8 @@ int _printf(const char *format, ...)
 		{'c', char_form},
 		{'s', string_form},
 		{'i', int_form},
-		{'d', int_form}
+		{'d', int_form},
+		{'b', bin_form}
 	};
 
 	if (format == NULL)

@@ -37,6 +37,10 @@ int main(void)
     len2 = printf("Negative:[%d]\n", 0);
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
+    len = _printf("Binary:[%b]\n", 98);
+    len2 = printf("Binary:[%b]\n", 98);
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
     /*_printf("Unsigned:[%u]\n", ui);
     printf("Unsigned:[%u]\n", ui);
     _printf("Unsigned octal:[%o]\n", ui);

@@ -8,7 +8,7 @@
  */
 int _putchar(char c)
 {
-        return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 
@@ -19,11 +19,11 @@ int _putchar(char c)
  */
 int _strlen(const char *s)
 {
-        int i = 0;
+	int i = 0;
 
-        while (s[i] != '\0')
-                i++;
-        return (i);
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
 
@@ -34,14 +34,17 @@ int _strlen(const char *s)
  */
 int getDigits(int n)
 {
-        int dup = n;
-        int digits = 0;
-        while (dup != 0)
-        {
-                dup /= 10;
-                digits++;
-        }
-        return digits;
+	int dup = n;
+	int digits = 0;
+	
+	if (n == 0)
+		return (1);
+	while (dup != 0)
+	{
+		dup /= 10;
+		digits++;
+	}
+	return (digits);
 }
 
 
@@ -52,16 +55,16 @@ int getDigits(int n)
  */
 char *toString(int n)
 {
-        int i, neg = 0, index = 0;
-        int digits = getDigits(n);
-        char s[1000];
-        char *sptr;
+	int i, neg = 0, index = 0;
+	int digits = getDigits(n);
+	char s[1000];
+	char *sptr;
 
-        if (n < 0)
-        {
-                n *= -1;
-                neg = 1;
-        }
+	if (n < 0)
+	{
+		n *= -1;
+		neg = 1;
+	}
 	else if (n == 0)
 	{
 		sptr = malloc(sizeof(char) * 2);
@@ -69,24 +72,23 @@ char *toString(int n)
 		sptr[1] = '\0';
 		return (sptr);
 	}
-
-        for (i = 0; i < digits; i++)
-        {
-                s[digits - (i + 1)] = 48 + (n % 10);
-                n /= 10;
-        }
-        s[digits] = '\0';
-        if (neg)
-        {
-                digits++;
-                index = 1;
-        }
-        sptr = malloc(sizeof(char) * digits);
-        sptr[0] = neg ? '-' : s[0];
-        for (i = 0; i < digits; i++)
-        {
-                sptr[index] = s[i];
-                index++;
-        }
-        return (sptr);
+	for (i = 0; i < digits; i++)
+	{
+		s[digits - (i + 1)] = 48 + (n % 10);
+		n /= 10;
+	}
+	s[digits] = '\0';
+	if (neg)
+	{
+		digits++;
+		index = 1;
+	}
+	sptr = malloc(sizeof(char) * digits);
+	sptr[0] = neg ? '-' : s[0];
+	for (i = 0; i < digits; i++)
+	{
+		sptr[index] = s[i];
+		index++;
+	}
+	return (sptr);
 }
