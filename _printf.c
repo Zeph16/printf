@@ -36,7 +36,7 @@ int counter(const char *format)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, n, temp;
+	int i, n;
 	char c, *cptr;
 
 	if (format == NULL)
