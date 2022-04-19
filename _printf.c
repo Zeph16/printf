@@ -92,7 +92,7 @@ int _printf(const char *format, ...)
 	char c, *cptr;
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 	n = counter(format);
 	if (n == 0)
 		write(1, format, _strlen(format));
