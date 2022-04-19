@@ -78,7 +78,7 @@ char *toString(int n)
 		sptr[index] = s[i];
 		index++;
 	}
-        return sptr;
+        return (sptr);
 }
 /**
  * _printf - the function which operates like the actual printf
@@ -111,6 +111,8 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					cptr = va_arg(args, char *);
+					if (cptr == NULL)
+						cptr = "(null)";
 					write(1, cptr, _strlen(cptr));
 					len += _strlen(cptr);
 					break;
