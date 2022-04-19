@@ -18,6 +18,15 @@ int handler(const char *givenstr, va_list args, Spec forms[])
 	{
 		if (givenstr[i] == '%')
 		{
+			if (givenstr[i + 1] == ' ')
+				while (givenstr[i + 1] == ' ')
+					i++;
+			if (givenstr[i + 1] == '%')
+			{
+				len += _putchar('%');
+				i++;
+				continue;
+			}
 			for (j = 0; j < 2; j++)
 			{
 				if (givenstr[i + 1] == forms[j].form)
@@ -27,12 +36,7 @@ int handler(const char *givenstr, va_list args, Spec forms[])
 					break;
 				}
 			}
-			if (givenstr[i + 1] == '%')
-			{
-				len += _putchar('%');
-				i++;
-			}
-			else if (j == 2)
+			if (j == 2)
 				len += _putchar('%');
 			continue;
 		}
