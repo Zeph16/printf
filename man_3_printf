@@ -1,0 +1,30 @@
+.TH "man" 3 "19 April 2022" "0.01" "_printf man page"
+.SH NAME
+_printf -- Prints a formatted output of an input string
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENTS]
+.SH DESCRIPTION
+This custom printf function doesn't just output a string as it is provided but further formats it by given format specifications and function arguments. These format specifications include format specifiers and flags each that can be used to modify the original string as required.
+_printf inspects the format string and manipulates it based on an unknown number of arguments. This is possible by utilizing the perks of variadic functions in C.
+Interpreted conversion specifiers are:
+	%d - Replaced by a provided integer value
+	
+	%i - Replaced by a provided integer value
+
+	%c - Replaced by a provided character value
+
+	%s - Replaced by a provided string value
+
+.SH RETURN VALUE
+The number of conversion specifiers found in the provided string.
+.SH SEE ALSO
+.I 
+printf(3)
+.SH BUGS
+No known bugs
+.SH IMPROVEMENTS
+So far implemented the d, i, c, and s format specifiers.
+.SH AUTHOR
+Sofonias Ayele
+
+Yordanos Dereje
