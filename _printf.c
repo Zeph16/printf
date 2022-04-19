@@ -18,6 +18,8 @@ int handler(const char *givenstr, va_list args, Spec forms[])
 	{
 		if (givenstr[i] == '%')
 		{
+			if (givenstr[i + 1] == '\0')
+				return (-1);
 			if (givenstr[i + 1] == ' ')
 				while (givenstr[i + 1] == ' ')
 					i++;
