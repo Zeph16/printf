@@ -7,7 +7,7 @@
  * @s: the passed string
  * Return: the count
  */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int i = 0;
 
@@ -20,7 +20,7 @@ int _strlen(char *s)
  * @format: character string
  * Return: the count
  */
-int counter(char *format)
+int counter(const char *format)
 {
 	int i, n = 0;
 
