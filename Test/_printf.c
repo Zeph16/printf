@@ -62,6 +62,12 @@ int _printf(const char *format, ...)
 					write(1, cptr, _strlen(cptr));
 					len += _strlen(cptr);
 					break;
+				case '%':
+					c = '%';
+					cptr = &c;
+					write(1, cptr, 1);
+					len++;
+					break;
 				default:
 					write(1, (char *)(format + i), 1);
 					len++;
