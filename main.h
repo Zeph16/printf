@@ -16,13 +16,18 @@ typedef struct Specifier
 	int (*fun)(va_list);
 } Spec;
 
+int write(int fd, const char *buf, int bytes);
+
 int _printf(const char *format, ...);
 int handler(const char *, va_list, Spec[]);
-int write(int fd, const char *buf, int bytes);
-int _strlen(const char *s);
-int counter(const char *format);
+
 int _putchar(char c);
 int string_form(va_list f);
 int char_form(va_list f);
+int int_form(va_list f);
+
+int _strlen(const char *s);
+int getDigits(int n);
+char *toString(int n);
 
 #endif

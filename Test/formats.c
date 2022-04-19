@@ -1,15 +1,5 @@
 #include "main.h"
 
-/**
- * _putchar - prints a single character
- * @c: the character to be printed
- *
- * Return: number of bytes written (1)
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
 /**
  * string_form - handles the string format specifier
@@ -41,5 +31,16 @@ int char_form(va_list f)
 	return (_putchar(va_arg(f, int)));
 }
 
+int int_form(va_list f)
+{
+	int i, n, len = 0;
+	char *cptr;
+
+	n = va_arg(f, int);
+	cptr = toString(n);
+	for (i = 0; i < _strlen(cptr); i++)
+		len += _putchar(cptr[i]);
+	return (len);
+}
 
 
