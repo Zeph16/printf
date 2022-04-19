@@ -22,10 +22,8 @@ int counter(const char *format)
 	int i, n = 0;
 
 	for (i = 0; format[i] != '\0'; i++)
-	{
 		if (format[i] == '%')
 			n++;
-	}
 	return (n);
 }
 /**
