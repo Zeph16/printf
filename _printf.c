@@ -36,7 +36,7 @@ int counter(const char *format)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, n;
+	int i, n, len = 0;
 	char c, *cptr;
 
 	if (format == NULL)
@@ -55,13 +55,16 @@ int _printf(const char *format, ...)
 					c = va_arg(args, int);
 					cptr = &c;
 					write(1, cptr, 1);
+					len++;
 					break;
 				case 's':
 					cptr = va_arg(args, char *);
 					write(1, cptr, _strlen(cptr));
+					len += _strlen(cptr);
 					break;
 				default:
 					write(1, (char *)(format + i), 1);
+					len++;
 					i--;
 					break;
 			}
@@ -69,7 +72,8 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		write(1, (char *)(format + i), 1);
+		len++;
 	}
 	va_end(args);
-	return (n);
+	return (len);
 }
