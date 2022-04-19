@@ -73,7 +73,7 @@ int bin_form(va_list f)
 	}
 	cptr = toString(bin);
 	for (i = 0; i < _strlen(cptr); i++)
-                len += _putchar(cptr[i]);
-        free(cptr);
-        return (len);
+		len += _putchar(cptr[i]);
+	free(cptr);
+	return (len);
 }
