@@ -26,6 +26,7 @@ int string_form(va_list f);
 int char_form(va_list f);
 int int_form(va_list f);
 int bin_form(va_list f);
+int rev_form(va_list f);
 
 int _strlen(const char *s);
 int getDigits(int n);
