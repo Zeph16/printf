@@ -78,8 +78,8 @@ int bin_form(va_list f)
 	return (len);
 }
 /**
- * rev_form ' handles the reverse format specifier
- * @f: ;ist of arguements to _printf
+ * rev_form - handles the reverse format specifier
+ * @f: list of arguements to _printf
  *
  * Return: number of bytes written
  */

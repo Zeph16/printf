@@ -38,7 +38,7 @@ int handler(const char *givenstr, va_list args, Spec forms[])
 					break;
 				}
 			}
-			if (j == 5)
+			if (j == 6)
 				len += _putchar('%');
 			continue;
 		}
