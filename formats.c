@@ -77,3 +77,24 @@ int bin_form(va_list f)
 	free(cptr);
 	return (len);
 }
+/**
+ * rev_form ' handles the reverse format specifier
+ * @f: ;ist of arguements to _printf
+ *
+ * Return: number of bytes written
+ */
+int rev_form(va_list f)
+{
+	int i, n, len = 0;
+	char *cptr, *rev;
+
+	cptr = va_arg(f, char *);
+	if (cptr == NULL)
+		cptr == "(null)";
+	n = _strlen(cptr);
+	for (i = 0; i < n; i++)
+		rev[n - (i + 1)] = cptr[i];
+	for (i = 0; cptr[i] != '\0'; i++)
+		len += _putchar(rev[i]);
+	return (len);
+}
