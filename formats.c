@@ -96,5 +96,6 @@ int rev_form(va_list f)
 		rev[n - (i + 1)] = cptr[i];
 	for (i = 0; cptr[i] != '\0'; i++)
 		len += _putchar(rev[i]);
+	free(rev);
 	return (len);
 }
