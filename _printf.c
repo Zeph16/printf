@@ -61,7 +61,7 @@ int _printf(const char *format, ...)
 		{'i', int_form},
 		{'d', int_form},
 		{'b', bin_form},
-		{'r', rev_form}
+		{'r', rev_form},
 	};
 
 	if (format == NULL)
